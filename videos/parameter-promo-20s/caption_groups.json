@@ -1,0 +1,433 @@
+{
+  "total_duration_s": 20,
+  "width": 1920,
+  "height": 1080,
+  "groups": [
+    {
+      "id": "caption-group-0",
+      "frame": 1,
+      "start": 0,
+      "end": 2.043,
+      "text": "Bisnismu nggak butuh sistem",
+      "words": [
+        {
+          "id": "caption-word-0-0",
+          "text": "Bisnismu",
+          "start": 0,
+          "end": 0.681
+        },
+        {
+          "id": "caption-word-0-1",
+          "text": "nggak",
+          "start": 0.681,
+          "end": 1.106
+        },
+        {
+          "id": "caption-word-0-2",
+          "text": "butuh",
+          "start": 1.106,
+          "end": 1.532
+        },
+        {
+          "id": "caption-word-0-3",
+          "text": "sistem",
+          "start": 1.532,
+          "end": 2.043
+        }
+      ]
+    },
+    {
+      "id": "caption-group-1",
+      "frame": 1,
+      "start": 2.043,
+      "end": 3.404,
+      "text": "yang cuma terlihat",
+      "words": [
+        {
+          "id": "caption-word-1-0",
+          "text": "yang",
+          "start": 2.043,
+          "end": 2.383
+        },
+        {
+          "id": "caption-word-1-1",
+          "text": "cuma",
+          "start": 2.383,
+          "end": 2.723
+        },
+        {
+          "id": "caption-word-1-2",
+          "text": "terlihat",
+          "start": 2.723,
+          "end": 3.404
+        }
+      ]
+    },
+    {
+      "id": "caption-group-2",
+      "frame": 1,
+      "start": 3.404,
+      "end": 4,
+      "text": "canggih.",
+      "words": [
+        {
+          "id": "caption-word-2-0",
+          "text": "canggih.",
+          "start": 3.404,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "id": "caption-group-3",
+      "frame": 2,
+      "start": 4,
+      "end": 5.267,
+      "text": "Butuh yang benar-benar",
+      "words": [
+        {
+          "id": "caption-word-3-0",
+          "text": "Butuh",
+          "start": 4,
+          "end": 4.333
+        },
+        {
+          "id": "caption-word-3-1",
+          "text": "yang",
+          "start": 4.333,
+          "end": 4.6
+        },
+        {
+          "id": "caption-word-3-2",
+          "text": "benar-benar",
+          "start": 4.6,
+          "end": 5.267
+        }
+      ]
+    },
+    {
+      "id": "caption-group-4",
+      "frame": 2,
+      "start": 5.267,
+      "end": 5.733,
+      "text": "bekerja:",
+      "words": [
+        {
+          "id": "caption-word-4-0",
+          "text": "bekerja:",
+          "start": 5.267,
+          "end": 5.733
+        }
+      ]
+    },
+    {
+      "id": "caption-group-5",
+      "frame": 2,
+      "start": 5.733,
+      "end": 6.867,
+      "text": "produktivitas naik,",
+      "words": [
+        {
+          "id": "caption-word-5-0",
+          "text": "produktivitas",
+          "start": 5.733,
+          "end": 6.6
+        },
+        {
+          "id": "caption-word-5-1",
+          "text": "naik,",
+          "start": 6.6,
+          "end": 6.867
+        }
+      ]
+    },
+    {
+      "id": "caption-group-6",
+      "frame": 2,
+      "start": 6.867,
+      "end": 7.867,
+      "text": "operasional rapi,",
+      "words": [
+        {
+          "id": "caption-word-6-0",
+          "text": "operasional",
+          "start": 6.867,
+          "end": 7.6
+        },
+        {
+          "id": "caption-word-6-1",
+          "text": "rapi,",
+          "start": 7.6,
+          "end": 7.867
+        }
+      ]
+    },
+    {
+      "id": "caption-group-7",
+      "frame": 2,
+      "start": 7.867,
+      "end": 9,
+      "text": "penjualan bergerak.",
+      "words": [
+        {
+          "id": "caption-word-7-0",
+          "text": "penjualan",
+          "start": 7.867,
+          "end": 8.467
+        },
+        {
+          "id": "caption-word-7-1",
+          "text": "bergerak.",
+          "start": 8.467,
+          "end": 9
+        }
+      ]
+    },
+    {
+      "id": "caption-group-8",
+      "frame": 3,
+      "start": 9,
+      "end": 11.187,
+      "text": "Parameter membangun dan menjalankannya—dari",
+      "words": [
+        {
+          "id": "caption-word-8-0",
+          "text": "Parameter",
+          "start": 9,
+          "end": 9.505
+        },
+        {
+          "id": "caption-word-8-1",
+          "text": "membangun",
+          "start": 9.505,
+          "end": 10.009
+        },
+        {
+          "id": "caption-word-8-2",
+          "text": "dan",
+          "start": 10.009,
+          "end": 10.178
+        },
+        {
+          "id": "caption-word-8-3",
+          "text": "menjalankannya—dari",
+          "start": 10.178,
+          "end": 11.187
+        }
+      ]
+    },
+    {
+      "id": "caption-group-9",
+      "frame": 3,
+      "start": 11.187,
+      "end": 12.308,
+      "text": "aplikasi dan dashboard,",
+      "words": [
+        {
+          "id": "caption-word-9-0",
+          "text": "aplikasi",
+          "start": 11.187,
+          "end": 11.636
+        },
+        {
+          "id": "caption-word-9-1",
+          "text": "dan",
+          "start": 11.636,
+          "end": 11.804
+        },
+        {
+          "id": "caption-word-9-2",
+          "text": "dashboard,",
+          "start": 11.804,
+          "end": 12.308
+        }
+      ]
+    },
+    {
+      "id": "caption-group-10",
+      "frame": 3,
+      "start": 12.308,
+      "end": 13.037,
+      "text": "sampai website,",
+      "words": [
+        {
+          "id": "caption-word-10-0",
+          "text": "sampai",
+          "start": 12.308,
+          "end": 12.645
+        },
+        {
+          "id": "caption-word-10-1",
+          "text": "website,",
+          "start": 12.645,
+          "end": 13.037
+        }
+      ]
+    },
+    {
+      "id": "caption-group-11",
+      "frame": 3,
+      "start": 13.037,
+      "end": 13.542,
+      "text": "tools UMKM,",
+      "words": [
+        {
+          "id": "caption-word-11-0",
+          "text": "tools",
+          "start": 13.037,
+          "end": 13.318
+        },
+        {
+          "id": "caption-word-11-1",
+          "text": "UMKM,",
+          "start": 13.318,
+          "end": 13.542
+        }
+      ]
+    },
+    {
+      "id": "caption-group-12",
+      "frame": 3,
+      "start": 13.542,
+      "end": 14.551,
+      "text": "Platform Belajar Pro,",
+      "words": [
+        {
+          "id": "caption-word-12-0",
+          "text": "Platform",
+          "start": 13.542,
+          "end": 13.991
+        },
+        {
+          "id": "caption-word-12-1",
+          "text": "Belajar",
+          "start": 13.991,
+          "end": 14.383
+        },
+        {
+          "id": "caption-word-12-2",
+          "text": "Pro,",
+          "start": 14.383,
+          "end": 14.551
+        }
+      ]
+    },
+    {
+      "id": "caption-group-13",
+      "frame": 3,
+      "start": 14.551,
+      "end": 15,
+      "text": "dan Ritme.",
+      "words": [
+        {
+          "id": "caption-word-13-0",
+          "text": "dan",
+          "start": 14.551,
+          "end": 14.72
+        },
+        {
+          "id": "caption-word-13-1",
+          "text": "Ritme.",
+          "start": 14.72,
+          "end": 15
+        }
+      ]
+    },
+    {
+      "id": "caption-group-14",
+      "frame": 4,
+      "start": 15,
+      "end": 15.797,
+      "text": "Kami builder,",
+      "words": [
+        {
+          "id": "caption-word-14-0",
+          "text": "Kami",
+          "start": 15,
+          "end": 15.29
+        },
+        {
+          "id": "caption-word-14-1",
+          "text": "builder,",
+          "start": 15.29,
+          "end": 15.797
+        }
+      ]
+    },
+    {
+      "id": "caption-group-15",
+      "frame": 4,
+      "start": 15.797,
+      "end": 17.101,
+      "text": "bukan sekadar vendor.",
+      "words": [
+        {
+          "id": "caption-word-15-0",
+          "text": "bukan",
+          "start": 15.797,
+          "end": 16.159
+        },
+        {
+          "id": "caption-word-15-1",
+          "text": "sekadar",
+          "start": 16.159,
+          "end": 16.667
+        },
+        {
+          "id": "caption-word-15-2",
+          "text": "vendor.",
+          "start": 16.667,
+          "end": 17.101
+        }
+      ]
+    },
+    {
+      "id": "caption-group-16",
+      "frame": 4,
+      "start": 17.101,
+      "end": 18.333,
+      "text": "Ceritakan bisnismu.",
+      "words": [
+        {
+          "id": "caption-word-16-0",
+          "text": "Ceritakan",
+          "start": 17.101,
+          "end": 17.754
+        },
+        {
+          "id": "caption-word-16-1",
+          "text": "bisnismu.",
+          "start": 17.754,
+          "end": 18.333
+        }
+      ]
+    },
+    {
+      "id": "caption-group-17",
+      "frame": 4,
+      "start": 18.333,
+      "end": 20.12,
+      "text": "Konsultasi pertama gratis.",
+      "words": [
+        {
+          "id": "caption-word-17-0",
+          "text": "Konsultasi",
+          "start": 18.333,
+          "end": 19.058
+        },
+        {
+          "id": "caption-word-17-1",
+          "text": "pertama",
+          "start": 19.058,
+          "end": 19.565
+        },
+        {
+          "id": "caption-word-17-2",
+          "text": "gratis.",
+          "start": 19.565,
+          "end": 20
+        }
+      ]
+    }
+  ]
+}

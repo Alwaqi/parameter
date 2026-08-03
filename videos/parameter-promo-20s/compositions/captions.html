@@ -1,0 +1,237 @@
+<template id="captions-template" data-composition-id="captions" data-width="1920" data-height="1080">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+
+
+<style data-brand-tokens>
+      @font-face { font-family: 'General Sans'; src: url('assets/fonts/general-sans-400.woff2') format('woff2'); font-weight: 400; font-display: block; }
+      :root {
+      --paper: #0E0F13;
+      --paper-2: #2D6BF5;
+      --ink: #F6F7F9;
+      --ink-soft: #2D6BF5;
+      --grid: rgba(45, 107, 245, 0.10);
+      --ink-faint: rgba(45, 107, 245, 0.18);
+      --cap-ink: #F6F7F9;
+      --cap-canvas: #0E0F13;
+      --cap-accent: #2D6BF5;
+      --cap-accent-2: #2D6BF5;
+      --font-display: "General Sans", system-ui, serif;
+      --font-body: "General Sans", system-ui, sans-serif;
+      --cap-band-top: 900px;
+      --cap-band-height: 180px;
+      }
+    </style>
+
+<style>
+  #captions-root {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .caption-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+  }
+  /* the keep-out band, from captionBand(H) — frame content stays above it */
+  .caption-stage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--cap-band-top, 900px);
+    height: var(--cap-band-height, 180px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .caption-group {
+    /* every group is absolutely stacked over the SAME band — exactly one shown at a
+       time via opacity. Must be absolute: in-flow groups would lay out side-by-side. */
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+
+  /* THE cream card — graph-paper grid behind the line + top/bottom 1.5px cobalt
+     hairlines (cobalt's frame furniture), square corners, NO drop shadow */
+  .caption-pill {
+    position: relative;
+    max-width: 78%;
+    padding: 20px 44px 24px;
+    background: var(--cap-canvas, #f0ebde);
+    background-image:
+      linear-gradient(
+        to right,
+        color-mix(in srgb, var(--cap-ink, #1f2be0) 10%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--cap-ink, #1f2be0) 10%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 16px 16px;
+    border-top: 1.5px solid var(--cap-ink, #1f2be0);
+    border-bottom: 1.5px solid var(--cap-ink, #1f2be0);
+    border-radius: 0;
+  }
+  .caption-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.1em 0.34em;
+    font-family: "General Sans", Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(40px, 4.4vw, 58px);
+    line-height: 1.16;
+    letter-spacing: -0.01em;
+  }
+
+  /* upcoming — faint cobalt, no block */
+  .caption-word {
+    display: inline-block;
+    padding: 0 0.06em;
+    color: color-mix(in srgb, var(--cap-ink, #1f2be0) 42%, var(--cap-canvas, #f0ebde));
+  }
+  /* current word — THE cobalt flat block (risograph knockout): a solid cobalt fill
+     via box-shadow spread = a hard square block w/o layout shift, no blur; the cream
+     paper reads on top */
+  .caption-word.is-active {
+    color: var(--cap-canvas, #f0ebde);
+    background: var(--cap-ink, #1f2be0);
+    box-shadow: 0 0 0 0.06em var(--cap-ink, #1f2be0);
+  }
+  /* already spoken — solid cobalt ink, block cleared */
+  .caption-word.is-spoken {
+    color: var(--cap-ink, #1f2be0);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* optional per-word accents (dormant until a word-classer tags them) */
+  /* brand / key term — Newsreader italic, cobalt's only display inflection */
+  .caption-word.cap-brand {
+    font-style: italic;
+  }
+  /* numerals / data — the body sans voice, slightly recessed */
+  .caption-word.cap-num {
+    font-family: "General Sans", ui-monospace, monospace;
+    color: color-mix(in srgb, var(--cap-ink, #1f2be0) 72%, var(--cap-canvas, #f0ebde));
+  }
+  /* emphasis — a cobalt hairline underline (no second hue; emphasis is the ink) */
+  .caption-word.cap-cta {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--cap-accent, #5560e5);
+    text-underline-offset: 0.1em;
+  }
+
+  @media (max-aspect-ratio: 9/16) {
+    .caption-pill {
+      max-width: 92%;
+    }
+    .caption-line {
+      font-size: clamp(34px, 5.4vw, 48px);
+    }
+  }
+</style>
+
+<div
+  id="captions-root"
+  data-composition-id="captions"
+  data-timeline-locked
+  data-start="0"
+  data-duration="20"
+  data-fps="30"
+  data-width="1920"
+  data-height="1080"
+>
+  <div class="caption-layer" aria-hidden="true">
+    <div id="caption-stage" class="caption-stage"></div>
+  </div>
+</div>
+
+<script>
+  // captions.mjs injects the engine's scene-aware groups + real duration here.
+  var GROUPS = [{"id":"caption-group-0","frame":1,"start":0,"end":2.043,"text":"Bisnismu nggak butuh sistem","words":[{"id":"caption-word-0-0","text":"Bisnismu","start":0,"end":0.681},{"id":"caption-word-0-1","text":"nggak","start":0.681,"end":1.106},{"id":"caption-word-0-2","text":"butuh","start":1.106,"end":1.532},{"id":"caption-word-0-3","text":"sistem","start":1.532,"end":2.043}]},{"id":"caption-group-1","frame":1,"start":2.043,"end":3.404,"text":"yang cuma terlihat","words":[{"id":"caption-word-1-0","text":"yang","start":2.043,"end":2.383},{"id":"caption-word-1-1","text":"cuma","start":2.383,"end":2.723},{"id":"caption-word-1-2","text":"terlihat","start":2.723,"end":3.404}]},{"id":"caption-group-2","frame":1,"start":3.404,"end":4,"text":"canggih.","words":[{"id":"caption-word-2-0","text":"canggih.","start":3.404,"end":4}]},{"id":"caption-group-3","frame":2,"start":4,"end":5.267,"text":"Butuh yang benar-benar","words":[{"id":"caption-word-3-0","text":"Butuh","start":4,"end":4.333},{"id":"caption-word-3-1","text":"yang","start":4.333,"end":4.6},{"id":"caption-word-3-2","text":"benar-benar","start":4.6,"end":5.267}]},{"id":"caption-group-4","frame":2,"start":5.267,"end":5.733,"text":"bekerja:","words":[{"id":"caption-word-4-0","text":"bekerja:","start":5.267,"end":5.733}]},{"id":"caption-group-5","frame":2,"start":5.733,"end":6.867,"text":"produktivitas naik,","words":[{"id":"caption-word-5-0","text":"produktivitas","start":5.733,"end":6.6},{"id":"caption-word-5-1","text":"naik,","start":6.6,"end":6.867}]},{"id":"caption-group-6","frame":2,"start":6.867,"end":7.867,"text":"operasional rapi,","words":[{"id":"caption-word-6-0","text":"operasional","start":6.867,"end":7.6},{"id":"caption-word-6-1","text":"rapi,","start":7.6,"end":7.867}]},{"id":"caption-group-7","frame":2,"start":7.867,"end":9,"text":"penjualan bergerak.","words":[{"id":"caption-word-7-0","text":"penjualan","start":7.867,"end":8.467},{"id":"caption-word-7-1","text":"bergerak.","start":8.467,"end":9}]},{"id":"caption-group-8","frame":3,"start":9,"end":11.187,"text":"Parameter membangun dan menjalankannya—dari","words":[{"id":"caption-word-8-0","text":"Parameter","start":9,"end":9.505},{"id":"caption-word-8-1","text":"membangun","start":9.505,"end":10.009},{"id":"caption-word-8-2","text":"dan","start":10.009,"end":10.178},{"id":"caption-word-8-3","text":"menjalankannya—dari","start":10.178,"end":11.187}]},{"id":"caption-group-9","frame":3,"start":11.187,"end":12.308,"text":"aplikasi dan dashboard,","words":[{"id":"caption-word-9-0","text":"aplikasi","start":11.187,"end":11.636},{"id":"caption-word-9-1","text":"dan","start":11.636,"end":11.804},{"id":"caption-word-9-2","text":"dashboard,","start":11.804,"end":12.308}]},{"id":"caption-group-10","frame":3,"start":12.308,"end":13.037,"text":"sampai website,","words":[{"id":"caption-word-10-0","text":"sampai","start":12.308,"end":12.645},{"id":"caption-word-10-1","text":"website,","start":12.645,"end":13.037}]},{"id":"caption-group-11","frame":3,"start":13.037,"end":13.542,"text":"tools UMKM,","words":[{"id":"caption-word-11-0","text":"tools","start":13.037,"end":13.318},{"id":"caption-word-11-1","text":"UMKM,","start":13.318,"end":13.542}]},{"id":"caption-group-12","frame":3,"start":13.542,"end":14.551,"text":"Platform Belajar Pro,","words":[{"id":"caption-word-12-0","text":"Platform","start":13.542,"end":13.991},{"id":"caption-word-12-1","text":"Belajar","start":13.991,"end":14.383},{"id":"caption-word-12-2","text":"Pro,","start":14.383,"end":14.551}]},{"id":"caption-group-13","frame":3,"start":14.551,"end":15,"text":"dan Ritme.","words":[{"id":"caption-word-13-0","text":"dan","start":14.551,"end":14.72},{"id":"caption-word-13-1","text":"Ritme.","start":14.72,"end":15}]},{"id":"caption-group-14","frame":4,"start":15,"end":15.797,"text":"Kami builder,","words":[{"id":"caption-word-14-0","text":"Kami","start":15,"end":15.29},{"id":"caption-word-14-1","text":"builder,","start":15.29,"end":15.797}]},{"id":"caption-group-15","frame":4,"start":15.797,"end":17.101,"text":"bukan sekadar vendor.","words":[{"id":"caption-word-15-0","text":"bukan","start":15.797,"end":16.159},{"id":"caption-word-15-1","text":"sekadar","start":16.159,"end":16.667},{"id":"caption-word-15-2","text":"vendor.","start":16.667,"end":17.101}]},{"id":"caption-group-16","frame":4,"start":17.101,"end":18.333,"text":"Ceritakan bisnismu.","words":[{"id":"caption-word-16-0","text":"Ceritakan","start":17.101,"end":17.754},{"id":"caption-word-16-1","text":"bisnismu.","start":17.754,"end":18.333}]},{"id":"caption-group-17","frame":4,"start":18.333,"end":20.12,"text":"Konsultasi pertama gratis.","words":[{"id":"caption-word-17-0","text":"Konsultasi","start":18.333,"end":19.058},{"id":"caption-word-17-1","text":"pertama","start":19.058,"end":19.565},{"id":"caption-word-17-2","text":"gratis.","start":19.565,"end":20}]}];
+  var DURATION = 20;
+
+  (function () {
+    var stage = document.getElementById("caption-stage");
+
+    // build DOM: one .caption-group per group, .caption-word per word
+    GROUPS.forEach(function (group, g) {
+      var groupEl = document.createElement("div");
+      groupEl.className = "caption-group";
+      groupEl.id = "caption-group-" + g;
+      var pill = document.createElement("div");
+      pill.className = "caption-pill";
+      var line = document.createElement("div");
+      line.className = "caption-line";
+      (group.words || []).forEach(function (w, i) {
+        var span = document.createElement("span");
+        span.className = "caption-word";
+        span.id = "caption-word-" + g + "-" + i;
+        span.textContent = String(w.text);
+        line.appendChild(span);
+      });
+      pill.appendChild(line);
+      groupEl.appendChild(pill);
+      stage.appendChild(groupEl);
+    });
+
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+
+    GROUPS.forEach(function (group, g) {
+      var groupEl = document.getElementById("caption-group-" + g);
+      var words = group.words || [];
+      var next = GROUPS[g + 1];
+      var isLast = g === GROUPS.length - 1;
+      var start = Math.max(0, Number(group.start));
+      var end = isLast ? DURATION : Math.min(Number(next.start), Number(group.end) + 0.3);
+      if (end <= start) end = start + 0.01;
+
+      // group on/off — exactly one group visible at a time
+      tl.set(groupEl, { opacity: 1 }, start);
+      tl.set(groupEl, { opacity: 0 }, end);
+
+      // 3-state karaoke via className SETS — seek-safe (gsap.set applies on the
+      // engine's frame-by-frame seek; .call callbacks would NOT fire).
+      words.forEach(function (w, i) {
+        var el = document.getElementById("caption-word-" + g + "-" + i);
+        var at = Math.max(start, Number(w.start));
+        tl.set(el, { className: "caption-word" }, start); // upcoming (also resets on reverse-seek)
+        tl.set(el, { className: "caption-word is-active" }, at); // current
+        tl.fromTo(el, { scale: 0.985 }, { scale: 1, duration: 0.1, ease: "power3.out" }, at);
+        if (i + 1 < words.length) {
+          var nextAt = Math.max(start, Number(words[i + 1].start));
+          tl.set(el, { className: "caption-word is-spoken" }, nextAt); // demote when next activates
+        }
+      });
+      if (words.length) {
+        var lastEl = document.getElementById("caption-word-" + g + "-" + (words.length - 1));
+        var lastSpoken = Math.min(end, Number(words[words.length - 1].end) + 0.1);
+        tl.set(lastEl, { className: "caption-word is-spoken" }, lastSpoken);
+      }
+    });
+
+    // full-span anchor so the sub-comp timeline spans the whole video
+    tl.to({}, { duration: DURATION }, 0);
+    window.__timelines["captions"] = tl;
+  })();
+</script>
+
+<style>
+  .caption-line { line-height: 1.1 !important; }
+</style>
+<style>
+  .caption-word { color: var(--cap-ink); }
+  .caption-word.is-active { color: var(--cap-canvas); background: var(--cap-ink); box-shadow: 0 0 0 0.06em var(--cap-ink); }
+  .caption-word.is-spoken { color: var(--cap-ink); background: transparent; box-shadow: none; }
+</style>
+</template>

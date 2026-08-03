@@ -1,0 +1,8 @@
+{"id":"image_001","type":"image","path":"assets/alana-hero.webp","source":"existing","description":"alana hero","width":1003,"height":1568,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_002","type":"image","path":"assets/dashboard-module.png","source":"existing","description":"dashboard module","width":1254,"height":1254,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_003","type":"image","path":"assets/kalkulator-hpp-thumbnail.png","source":"existing","description":"kalkulator hpp thumbnail","width":1920,"height":1080,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_004","type":"image","path":"assets/lms-cluster.png","source":"existing","description":"lms cluster","width":1254,"height":1254,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_005","type":"image","path":"assets/para-building.png","source":"existing","description":"para building","width":1254,"height":1254,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_006","type":"image","path":"assets/parameter-logo.png","source":"existing","description":"parameter logo","width":1610,"height":244,"provenance":{"provider":"local","adopted":true}}
+{"id":"image_007","type":"image","path":"assets/ritme-cluster.png","source":"existing","description":"ritme cluster","width":1254,"height":1254,"provenance":{"provider":"local","adopted":true}}
+{"id":"voice_001","type":"voice","path":"assets/voice/03.wav","source":"existing","description":"03","duration":7.4,"provenance":{"provider":"local","adopted":true}}

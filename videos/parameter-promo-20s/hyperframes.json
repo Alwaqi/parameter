@@ -1,0 +1,18 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/hyperframes.json",
+  "registry": "https://raw.githubusercontent.com/heygen-com/hyperframes/main/registry",
+  "paths": {
+    "blocks": "compositions",
+    "components": "compositions/components",
+    "assets": "assets"
+  },
+  "brief": {
+    "mode": "autonomous",
+    "angle": "builder-not-vendor",
+    "length": "20s",
+    "destination": "website embed",
+    "aspect": "1920x1080",
+    "message": "Parameter builds practical digital systems that make Indonesian SMEs more productive.",
+    "language": "Indonesian"
+  }
+}

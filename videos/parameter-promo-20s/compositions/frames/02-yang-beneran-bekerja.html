@@ -1,0 +1,600 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Yang Beneran Bekerja</title>
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "General Sans";
+          src: url("assets/fonts/general-sans-400.woff2") format("woff2");
+          font-style: normal;
+          font-weight: 400;
+          font-display: block;
+        }
+
+        @font-face {
+          font-family: "General Sans";
+          src: url("assets/fonts/general-sans-500.woff2") format("woff2");
+          font-style: normal;
+          font-weight: 500;
+          font-display: block;
+        }
+
+        @font-face {
+          font-family: "General Sans";
+          src: url("assets/fonts/general-sans-600.woff2") format("woff2");
+          font-style: normal;
+          font-weight: 600;
+          font-display: block;
+        }
+
+        @font-face {
+          font-family: "JetBrains Mono";
+          src: url("assets/fonts/jetbrains-mono-400.ttf") format("truetype");
+          font-style: normal;
+          font-weight: 400;
+          font-display: block;
+        }
+
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+          box-sizing: border-box;
+          container-type: size;
+          color: #f6f7f9;
+          font-family: "General Sans";
+          font-weight: 400;
+        }
+
+        .ground {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background-color: #0e0f13;
+          background-image:
+            linear-gradient(rgba(45, 107, 245, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(45, 107, 245, 0.1) 1px, transparent 1px);
+          background-size: 38px 38px;
+        }
+
+        .hairline {
+          position: absolute;
+          left: 77px;
+          width: 1766px;
+          height: 2px;
+          background: #2d6bf5;
+        }
+
+        .hairline.top {
+          top: 58px;
+        }
+
+        .hairline.bottom {
+          top: 870px;
+        }
+
+        .content {
+          position: absolute;
+          inset: 0;
+          height: 896px;
+          overflow: hidden;
+        }
+
+        .chrome {
+          position: absolute;
+          z-index: 10;
+          color: #6fa0ff;
+          font-family: "JetBrains Mono";
+          font-size: 13px;
+          font-weight: 400;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+        }
+
+        .chrome.top-left {
+          top: 80px;
+          left: 77px;
+        }
+
+        .chrome.top-right {
+          top: 80px;
+          right: 77px;
+        }
+
+        .chrome.bottom-left {
+          top: 839px;
+          left: 77px;
+        }
+
+        .chrome.bottom-right {
+          top: 839px;
+          right: 77px;
+        }
+
+        .headline {
+          position: absolute;
+          z-index: 8;
+          top: 126px;
+          left: 77px;
+          width: 925px;
+          color: #f6f7f9;
+          font-size: 4.8cqw;
+          font-weight: 400;
+          line-height: 1;
+          letter-spacing: -0.008em;
+          text-transform: uppercase;
+        }
+
+        .headline-line {
+          display: block;
+          width: max-content;
+          max-width: 100%;
+          will-change: transform, opacity;
+        }
+
+        .headline-line.accent {
+          color: #6fa0ff;
+        }
+
+        .headline-rule {
+          position: absolute;
+          z-index: 7;
+          top: 385px;
+          left: 77px;
+          width: 886px;
+          height: 2px;
+          background: #2d6bf5;
+          transform-origin: left center;
+          will-change: transform, opacity;
+        }
+
+        .ledger {
+          position: absolute;
+          z-index: 8;
+          top: 421px;
+          left: 77px;
+          width: 886px;
+          height: 344px;
+        }
+
+        .ledger-rail {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 2px;
+          height: 326px;
+          background: #2d6bf5;
+          transform-origin: top center;
+          will-change: transform, opacity;
+        }
+
+        .ledger-row {
+          position: absolute;
+          left: 0;
+          width: 886px;
+          height: 92px;
+          display: grid;
+          grid-template-columns: 86px minmax(0, 1fr) 190px 64px;
+          align-items: center;
+          box-sizing: border-box;
+          padding: 0 20px 0 25px;
+          border-top: 1px solid rgba(45, 107, 245, 0.52);
+          border-bottom: 1px solid rgba(45, 107, 245, 0.18);
+          background: rgba(45, 107, 245, 0.025);
+          will-change: transform, opacity;
+        }
+
+        .ledger-row.row-1 {
+          top: 0;
+        }
+
+        .ledger-row.row-2 {
+          top: 111px;
+        }
+
+        .ledger-row.row-3 {
+          top: 222px;
+        }
+
+        .row-part {
+          display: block;
+          will-change: transform, opacity;
+        }
+
+        .row-number {
+          color: #6fa0ff;
+          font-family: "JetBrains Mono";
+          font-size: 17px;
+          letter-spacing: 0.08em;
+        }
+
+        .row-label {
+          color: #f6f7f9;
+          font-size: 1.55cqw;
+          font-weight: 500;
+          letter-spacing: 0.025em;
+          text-transform: uppercase;
+        }
+
+        .row-symbol {
+          color: #6fa0ff;
+          font-family: "JetBrains Mono";
+          font-size: 34px;
+          line-height: 1;
+          text-align: right;
+        }
+
+        .pixel-bars {
+          height: 54px;
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          gap: 9px;
+          padding-bottom: 9px;
+          border-bottom: 2px solid rgba(45, 107, 245, 0.62);
+          box-sizing: border-box;
+        }
+
+        .pixel-bar {
+          display: block;
+          width: 18px;
+          background: #2d6bf5;
+          transform-origin: bottom center;
+          will-change: transform, opacity;
+        }
+
+        .pixel-bar:nth-child(1) {
+          height: 13px;
+          opacity: 0.52;
+        }
+
+        .pixel-bar:nth-child(2) {
+          height: 21px;
+          opacity: 0.64;
+        }
+
+        .pixel-bar:nth-child(3) {
+          height: 28px;
+          opacity: 0.76;
+        }
+
+        .pixel-bar:nth-child(4) {
+          height: 35px;
+          opacity: 0.88;
+        }
+
+        .pixel-bar:nth-child(5) {
+          height: 43px;
+          opacity: 1;
+        }
+
+        .status-grid {
+          display: grid;
+          grid-template-columns: repeat(5, 22px);
+          justify-content: end;
+          gap: 8px;
+        }
+
+        .status-cell {
+          display: block;
+          width: 22px;
+          height: 22px;
+          border: 1px solid rgba(45, 107, 245, 0.58);
+          background: rgba(45, 107, 245, 0.14);
+          box-sizing: border-box;
+        }
+
+        .status-cell.on {
+          background: #2d6bf5;
+        }
+
+        .motion-dashes {
+          display: flex;
+          justify-content: flex-end;
+          gap: 10px;
+        }
+
+        .motion-dash {
+          display: block;
+          width: 24px;
+          height: 4px;
+          background: #2d6bf5;
+        }
+
+        .motion-dash:nth-child(2) {
+          width: 38px;
+          opacity: 0.72;
+        }
+
+        .motion-dash:nth-child(3) {
+          width: 54px;
+          opacity: 0.46;
+        }
+
+        .hero-stage {
+          position: absolute;
+          z-index: 3;
+          top: 28px;
+          right: 18px;
+          width: 868px;
+          height: 852px;
+          overflow: hidden;
+        }
+
+        .robot-glow {
+          position: absolute;
+          z-index: 1;
+          top: 90px;
+          left: 80px;
+          width: 730px;
+          height: 730px;
+          background: radial-gradient(
+            circle at center,
+            rgba(45, 107, 245, 0.74) 0%,
+            rgba(45, 107, 245, 0.22) 36%,
+            rgba(45, 107, 245, 0) 72%
+          );
+          transform-origin: 50% 50%;
+          will-change: transform, opacity;
+          pointer-events: none;
+        }
+
+        .dashboard-module {
+          --dof: 0px;
+          position: absolute;
+          z-index: 2;
+          top: 112px;
+          left: 56px;
+          width: 610px;
+          height: 610px;
+          object-fit: contain;
+          filter: blur(var(--dof));
+          will-change: transform, opacity, filter;
+        }
+
+        .robot {
+          position: absolute;
+          z-index: 4;
+          top: 3px;
+          left: 70px;
+          width: 810px;
+          height: 810px;
+          object-fit: contain;
+          transform-origin: 58% 54%;
+          will-change: transform, opacity;
+        }
+
+        .depth-index {
+          position: absolute;
+          z-index: 5;
+          top: 714px;
+          right: 76px;
+          color: #6fa0ff;
+          font-family: "JetBrains Mono";
+          font-size: 12px;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          writing-mode: vertical-rl;
+        }
+
+        .registration-mark {
+          position: absolute;
+          z-index: 6;
+          top: 118px;
+          right: 76px;
+          width: 52px;
+          height: 52px;
+          border-top: 2px solid #2d6bf5;
+          border-right: 2px solid #2d6bf5;
+          box-sizing: border-box;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="02-yang-beneran-bekerja"
+        data-width="1920"
+        data-height="1080"
+        data-duration="5.5"
+      >
+        <div id="f02-ground" class="clip ground" data-start="0" data-duration="5.5" data-track-index="0">
+          <div class="hairline top"></div>
+          <div class="hairline bottom"></div>
+        </div>
+
+        <div id="f02-content" class="clip content" data-start="0" data-duration="5.5" data-track-index="1">
+          <div class="chrome top-left">FRAME 02 / OUTCOMES</div>
+          <div class="chrome top-right">PARAMETER — SYSTEM MODE</div>
+          <div class="chrome bottom-left">BUILD / ALIGN / MOVE</div>
+          <div class="chrome bottom-right">02</div>
+
+          <div class="headline" aria-label="Yang beneran bekerja">
+            <span class="headline-line" id="f02-headline-1">YANG</span>
+            <span class="headline-line" id="f02-headline-2">BENERAN</span>
+            <span class="headline-line accent" id="f02-headline-3">BEKERJA</span>
+          </div>
+          <div class="headline-rule" id="f02-headline-rule"></div>
+
+          <div class="ledger">
+            <div class="ledger-rail" id="f02-ledger-rail"></div>
+
+            <div class="ledger-row row-1" id="f02-row-1">
+              <span class="row-part row-number" id="f02-row-1-number">01</span>
+              <span class="row-part row-label" id="f02-row-1-label">PRODUKTIVITAS</span>
+              <span class="row-part pixel-bars" id="f02-row-1-bars">
+                <span class="pixel-bar" id="f02-bar-1"></span>
+                <span class="pixel-bar" id="f02-bar-2"></span>
+                <span class="pixel-bar" id="f02-bar-3"></span>
+                <span class="pixel-bar" id="f02-bar-4"></span>
+                <span class="pixel-bar" id="f02-bar-5"></span>
+              </span>
+              <span class="row-part row-symbol" id="f02-row-1-symbol">↑</span>
+            </div>
+
+            <div class="ledger-row row-2" id="f02-row-2">
+              <span class="row-part row-number" id="f02-row-2-number">02</span>
+              <span class="row-part row-label" id="f02-row-2-label">OPERASIONAL</span>
+              <span class="row-part status-grid" id="f02-row-2-grid">
+                <span class="status-cell on"></span>
+                <span class="status-cell on"></span>
+                <span class="status-cell on"></span>
+                <span class="status-cell on"></span>
+                <span class="status-cell"></span>
+              </span>
+              <span class="row-part row-symbol" id="f02-row-2-symbol">✓</span>
+            </div>
+
+            <div class="ledger-row row-3" id="f02-row-3">
+              <span class="row-part row-number" id="f02-row-3-number">03</span>
+              <span class="row-part row-label" id="f02-row-3-label">PENJUALAN</span>
+              <span class="row-part motion-dashes" id="f02-row-3-dashes">
+                <span class="motion-dash"></span>
+                <span class="motion-dash"></span>
+                <span class="motion-dash"></span>
+              </span>
+              <span class="row-part row-symbol" id="f02-row-3-symbol">→</span>
+            </div>
+          </div>
+
+        <div class="hero-stage" data-layout-allow-overflow>
+            <div class="robot-glow" id="f02-robot-glow"></div>
+            <img
+              class="dashboard-module"
+              id="f02-dashboard"
+              src="assets/dashboard-module.png"
+              alt=""
+            />
+            <img
+              class="robot"
+              id="f02-robot"
+              src="assets/para-building.png"
+              alt="Builder robot"
+            />
+            <div class="depth-index">DEPTH / 03</div>
+            <div class="registration-mark"></div>
+          </div>
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+      <script>
+        window.__timelines = window.__timelines || {};
+
+        const f02Timeline = gsap.timeline({ paused: true });
+
+        const f02ById = (id) => document.getElementById(id);
+
+        f02Timeline.fromTo(
+          f02ById("f02-robot"),
+          { x: 160, scale: 0, opacity: 0 },
+          { x: 0, scale: 1, opacity: 1, duration: 0.7, ease: "power3.out" },
+          0.05,
+        );
+
+        ["f02-headline-1", "f02-headline-2", "f02-headline-3"].forEach((id, index) => {
+          f02Timeline.fromTo(
+            f02ById(id),
+            { x: -84, opacity: 0 },
+            { x: 0, opacity: 1, duration: 0.56, ease: "power4.out" },
+            0.06 + index * 0.14,
+          );
+        });
+
+        f02Timeline.fromTo(
+          f02ById("f02-headline-rule"),
+          { scaleX: 0, opacity: 0 },
+          { scaleX: 1, opacity: 1, duration: 0.62, ease: "power3.out" },
+          0.42,
+        );
+
+        f02Timeline.fromTo(
+          f02ById("f02-ledger-rail"),
+          { scaleY: 0, opacity: 0.2 },
+          { scaleY: 1, opacity: 1, duration: 3.28, ease: "none" },
+          0.88,
+        );
+
+        const f02AssembleRow = (rowId, partIds, start) => {
+          f02Timeline.fromTo(
+            f02ById(rowId),
+            { x: 74, scale: 0.985, opacity: 0 },
+            { x: 0, scale: 1, opacity: 1, duration: 0.68, ease: "power3.out" },
+            start,
+          );
+
+          partIds.forEach((id, index) => {
+            f02Timeline.fromTo(
+              f02ById(id),
+              { x: 34, opacity: 0 },
+              { x: 0, opacity: 1, duration: 0.54, ease: "power3.out" },
+              start + 0.08 + index * 0.055,
+            );
+          });
+        };
+
+        f02AssembleRow(
+          "f02-row-1",
+          ["f02-row-1-number", "f02-row-1-label", "f02-row-1-bars", "f02-row-1-symbol"],
+          1,
+        );
+
+        ["f02-bar-1", "f02-bar-2", "f02-bar-3", "f02-bar-4", "f02-bar-5"].forEach(
+          (id, index) => {
+            f02Timeline.fromTo(
+              f02ById(id),
+              { scaleY: 0, opacity: 0 },
+              { scaleY: 1, opacity: 1, duration: 0.62, ease: "power3.out" },
+              1.18 + index * 0.07,
+            );
+          },
+        );
+
+        f02AssembleRow(
+          "f02-row-2",
+          ["f02-row-2-number", "f02-row-2-label", "f02-row-2-grid", "f02-row-2-symbol"],
+          2.2,
+        );
+
+        f02Timeline.fromTo(
+          f02ById("f02-dashboard"),
+          { scale: 0.9, opacity: 0, "--dof": "16px" },
+          {
+            scale: 1,
+            opacity: 0.52,
+            "--dof": "7px",
+            duration: 0.9,
+            ease: "power2.inOut",
+          },
+          2.2,
+        );
+
+        f02AssembleRow(
+          "f02-row-3",
+          ["f02-row-3-number", "f02-row-3-label", "f02-row-3-dashes", "f02-row-3-symbol"],
+          3.4,
+        );
+
+        f02Timeline.fromTo(
+          f02ById("f02-robot-glow"),
+          { x: -96, scale: 0.8, opacity: 0 },
+          { x: 0, scale: 1, opacity: 0.26, duration: 0.82, ease: "power2.out" },
+          3.46,
+        );
+
+        f02Timeline.to(
+          f02ById("f02-robot-glow"),
+          { x: 72, scale: 1.04, opacity: 0.16, duration: 0.46, ease: "power2.inOut" },
+          4.28,
+        );
+
+        window.__timelines["02-yang-beneran-bekerja"] = f02Timeline;
+      </script>
+    </template>
+  </body>
+</html>

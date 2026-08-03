@@ -1,0 +1,299 @@
+{
+  "typography": [
+    {
+      "role": "display",
+      "fontFamily": "General Sans",
+      "fontSize": "120px",
+      "fontWeight": "600",
+      "lineHeight": "120px",
+      "letterSpacing": "-2.4px",
+      "color": "#F6F7F9",
+      "sampleText": "Atur parameterpertumbuhanbisnis digitalmu."
+    },
+    {
+      "role": "heading",
+      "fontFamily": "General Sans",
+      "fontSize": "68px",
+      "fontWeight": "600",
+      "lineHeight": "66.64px",
+      "letterSpacing": "-1.7px",
+      "color": "#F6F7F9",
+      "sampleText": "Produk yang kamibangun & jalanin."
+    },
+    {
+      "role": "heading-2",
+      "fontFamily": "General Sans",
+      "fontSize": "56px",
+      "fontWeight": "600",
+      "lineHeight": "58.24px",
+      "letterSpacing": "-1.4px",
+      "color": "#F6F7F9",
+      "sampleText": "Tiap keputusan,sebuah parameter."
+    },
+    {
+      "role": "heading-3",
+      "fontFamily": "General Sans",
+      "fontSize": "36px",
+      "fontWeight": "600",
+      "lineHeight": "54px",
+      "letterSpacing": "-0.9px",
+      "color": "#14161B",
+      "sampleText": "Aplikasi"
+    },
+    {
+      "role": "heading-3",
+      "fontFamily": "General Sans",
+      "fontSize": "24px",
+      "fontWeight": "600",
+      "lineHeight": "32px",
+      "letterSpacing": "-0.36px",
+      "color": "#F6F7F9",
+      "sampleText": "Platform Belajar Pro"
+    },
+    {
+      "role": "body",
+      "fontFamily": "Satoshi",
+      "fontSize": "19px",
+      "fontWeight": "400",
+      "lineHeight": "30.875px",
+      "letterSpacing": "normal",
+      "color": "#9EA1A9",
+      "sampleText": "Parameter bukan vendor biasa — kami builder yang bikin & jal"
+    },
+    {
+      "role": "link",
+      "fontFamily": "Satoshi",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "color": "#F6F7F9",
+      "sampleText": ""
+    },
+    {
+      "role": "label",
+      "fontFamily": "JetBrains Mono",
+      "fontSize": "11px",
+      "fontWeight": "500",
+      "lineHeight": "16.5px",
+      "letterSpacing": "1.98px",
+      "color": "#6A6D75",
+      "sampleText": "EST. 2026"
+    }
+  ],
+  "spacing": {
+    "observed": [
+      4,
+      6,
+      8,
+      10,
+      12,
+      16,
+      20,
+      24,
+      28,
+      32,
+      40,
+      48,
+      56,
+      112
+    ],
+    "baseUnit": 8
+  },
+  "radius": [
+    "22px",
+    "3.35544e+07px"
+  ],
+  "shadows": [],
+  "buttons": [
+    {
+      "label": "🔊",
+      "background": "lab(4.33254 0.248067 -2.29841 / 0.7)",
+      "backgroundImage": "",
+      "backdropFilter": "blur(2px)",
+      "color": "#F6F7F9",
+      "padding": "0px",
+      "borderRadius": "3.35544e+07px",
+      "border": "1px solid rgba(255, 255, 255, 0.09)",
+      "boxShadow": "none",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": "36px"
+    }
+  ],
+  "cards": [
+    {
+      "label": "card",
+      "background": "#1A1C22",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#F6F7F9",
+      "padding": "0px",
+      "borderRadius": "22px",
+      "border": "1px solid rgba(255, 255, 255, 0.09)",
+      "boxShadow": "none",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": "725.75px"
+    },
+    {
+      "label": "card",
+      "background": "#FFFFFF",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#0E0F13",
+      "padding": "28px",
+      "borderRadius": "22px",
+      "border": "1px solid rgba(14, 15, 19, 0.1)",
+      "boxShadow": "none",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": "606.547px"
+    },
+    {
+      "label": "card",
+      "background": "#FFFFFF",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#0E0F13",
+      "padding": "28px",
+      "borderRadius": "22px",
+      "border": "1px dashed lab(7.20158 0.0842288 -3.8586 / 0.15)",
+      "boxShadow": "none",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": "606.547px"
+    }
+  ],
+  "nav": {
+    "label": "navigation",
+    "background": "transparent",
+    "backgroundImage": "",
+    "backdropFilter": "",
+    "color": "#F6F7F9",
+    "padding": "12px 8px 0px",
+    "borderRadius": "0px",
+    "border": "0px solid rgba(255, 255, 255, 0.09)",
+    "boxShadow": "none",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "height": "70px"
+  },
+  "chips": [
+    {
+      "label": "▲ +82%diatur otomatis",
+      "background": "#2D6BF5",
+      "color": "#FFFFFF",
+      "padding": "8px 16px",
+      "borderRadius": "3.35544e+07px",
+      "border": "0px solid rgba(255, 255, 255, 0.09)",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+      "fontSize": "12px",
+      "fontWeight": "600",
+      "height": "34px"
+    },
+    {
+      "label": "Live",
+      "background": "oklab(0.999994 0.0000455677 0.0000200868 / 0.8)",
+      "color": "#0E0F13",
+      "padding": "4px 12px",
+      "borderRadius": "3.35544e+07px",
+      "border": "1px solid rgba(14, 15, 19, 0.1)",
+      "boxShadow": "none",
+      "fontSize": "10px",
+      "fontWeight": "700",
+      "height": "25px"
+    },
+    {
+      "label": "Live",
+      "background": "lab(4.33254 0.248067 -2.29841 / 0.6)",
+      "color": "#F6F7F9",
+      "padding": "4px 12px",
+      "borderRadius": "3.35544e+07px",
+      "border": "1px solid lab(97.1974 -0.0787973 -1.08564 / 0.2)",
+      "boxShadow": "none",
+      "fontSize": "10px",
+      "fontWeight": "700",
+      "height": "25px"
+    },
+    {
+      "label": "Tampil profesional",
+      "background": "transparent",
+      "color": "#9EA1A9",
+      "padding": "4px 12px",
+      "borderRadius": "3.35544e+07px",
+      "border": "1px solid lab(97.1974 -0.0788271 -1.08564 / 0.15)",
+      "boxShadow": "none",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "height": "28px"
+    }
+  ],
+  "statCells": [],
+  "tabs": [
+    {
+      "label": "+82%",
+      "background": "transparent",
+      "color": "#6FA0FF",
+      "padding": "0px",
+      "borderRadius": "0px",
+      "border": "0px solid rgba(255, 255, 255, 0.09)",
+      "boxShadow": "none",
+      "fontSize": "13px",
+      "fontWeight": "700",
+      "height": "19.5px"
+    },
+    {
+      "label": "0",
+      "background": "transparent",
+      "color": "#F6F7F9",
+      "padding": "0px",
+      "borderRadius": "0px",
+      "border": "0px solid rgba(255, 255, 255, 0.09)",
+      "boxShadow": "none",
+      "fontSize": "24px",
+      "fontWeight": "600",
+      "height": "32px"
+    }
+  ],
+  "backgrounds": [
+    {
+      "value": "linear-gradient(rgba(255, 255, 255, 0.09) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.09) 1px, rgba(0, 0, 0, 0) 1px)",
+      "area": 5066469
+    },
+    {
+      "value": "radial-gradient(closest-side, rgba(45, 107, 245, 0.22), rgba(0, 0, 0, 0))",
+      "area": 1125776
+    },
+    {
+      "value": "linear-gradient(rgba(14, 15, 19, 0.1) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(14, 15, 19, 0.1) 1px, rgba(0, 0, 0, 0) 1px)",
+      "area": 250432
+    },
+    {
+      "value": "linear-gradient(to top, rgb(14, 15, 19) 0%, lab(4.33254 0.248067 -2.29841 / 0.3) 50%, lab(4.33254 0.248067 -2.29841 / 0.4) 100%)",
+      "area": 233663
+    },
+    {
+      "value": "linear-gradient(to top, lab(4.33254 0.248067 -2.29841 / 0.28) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%)",
+      "area": 125402
+    }
+  ],
+  "glass": [
+    {
+      "backdropFilter": "blur(2px)",
+      "background": "lab(4.33254 0.248067 -2.29841 / 0.55)",
+      "border": "0px solid rgba(255, 255, 255, 0.09)",
+      "borderRadius": "0px",
+      "boxShadow": "",
+      "area": 170883
+    },
+    {
+      "backdropFilter": "blur(24px)",
+      "background": "oklab(0.169164 0.000643998 -0.0084621 / 0.8)",
+      "border": "1px solid rgba(255, 255, 255, 0.09)",
+      "borderRadius": "3.35544e+07px",
+      "boxShadow": "",
+      "area": 66816
+    }
+  ]
+}

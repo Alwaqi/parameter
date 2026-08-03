@@ -1,0 +1,191 @@
+[a] Portofolio
+[a] UMKM Tools
+[a] Konsultasi
+[span] Tersedia untuk proyek baru
+[span] EST. 2026
+[span] Atur parameter
+[span] pertumbuhan
+[span] bisnis
+[span] digitalmu.
+[p] Parameter bukan vendor biasa — kami
+[span] builder yang bikin & jalanin produk sendiri
+[p] (Platform Belajar Pro, Ritme). Pengalaman itu kami pakai buat bantu UMKM punya sistem yang beneran naikin produktivitas.
+[a] Konsultasi Gratis
+[a] Lihat Produk
+[span] Scroll
+[span] Dipercaya membangun
+[span] Platform Belajar Pro
+[span] Ritme
+[span] Sistem UMKM
+[span] Aplikasi
+[span] Sistem & Dashboard
+[span] Website
+[span] Landing Page
+[span] Integrasi WhatsApp
+[span] Pembayaran QRIS
+[span] Produk SaaS
+[span] Aplikasi
+[span] Sistem & Dashboard
+[span] Website
+[span] Landing Page
+[span] Integrasi WhatsApp
+[span] Pembayaran QRIS
+[span] Produk SaaS
+[span] Kami bukan cuma bikin — kami pakai sendiri:
+[span] + sistem custom UMKM
+[span] [ Cara Kami Mikir ]
+[h2] Tiap keputusan,
+[h2] sebuah
+[span] parameter
+[p] Kami nggak ngejar fitur. Kami atur variabel yang beneran ngegerakin bisnismu — produktivitas, efisiensi, penjualan. Geser sendiri, lihat logikanya.
+[span] parameter.config
+[span] Produktivitas
+[span] Efisiensi operasional
+[span] Penjualan online
+[div] Platform Belajar Pro
+[div] LMS & kursus
+[div] Ritme
+[div] OS studio kelas
+[span] ▲ +82%
+[div] diatur otomatis
+[span] Produk yang kami
+[span] bangun & jalanin.
+[span] [ 01 — Produk ]
+[p] Bukti kami ngerti bikin produk yang dipakai beneran — bukan proyek yang selesai lalu ditinggal.
+[span] Live
+[h3] Platform Belajar Pro
+[div] LMS & Kursus Online
+[p] Sistem manajemen pembelajaran untuk instruktur & lembaga: kelas live, jadwal, materi, pembayaran, sampai rekaman — semua dalam satu platform.
+[div] Lihat selengkapnya
+[span] Live
+[h3] Ritme
+[div] Sistem Operasi untuk Studio Kelas
+[p] Booking, paket & credit member, reminder WhatsApp, dan pembayaran QRIS untuk studio yoga, pilates, dance & gym kecil. Lokal-first.
+[div] Lihat selengkapnya
+[span] Bisnismu butuh
+[span] sistem? Kami bangunin.
+[span] [ 02 — Jasa untuk UMKM ]
+[p] Dari ide jadi produk digital yang kepakai. Teknologi yang pas, bukan yang ribet.
+[h3] Aplikasi
+[p] Aplikasi web/mobile sesuai alur bisnismu — bukan template kaku.
+[h3] Sistem & Dashboard
+[p] Sistem internal & dashboard biar operasional rapi dan datanya kelihatan.
+[h3] Website
+[p] Company profile / toko yang cepat, modern, dan gampang dikelola.
+[h3] Landing Page
+[p] Landing page konversi tinggi buat kampanye, produk, atau jualan.
+[p] Semua demi satu tujuan:
+[strong] bisnismu lebih produktif.
+[a] Mulai Proyek
+[span] Karya yang kami
+[span] bangun buat usaha lokal.
+[span] [ 03 — Portofolio ]
+[p] Bukan mockup. Ini website beneran yang udah online & kepakai — hasil kerja kami buat bisnis nyata.
+[span] Live
+[span] alana.parameter.cloud
+[div] Website Toko Roti · Company Profile + Pre-Order
+[h3] Alana Bakery
+[p] Usaha roti rumahan yang tadinya cuma jualan lewat chat & status WhatsApp, kami kasih 'rumah digital' sendiri: website sinematik dengan foto produk yang menggugah, cerita brand, menu, sampai tombol pesan yang langsung nyambung ke WhatsApp.
+[span] Bantu bisnisnya dari sisi
+[p] Bikin usaha kecil tampil sekelas brand besar — naikin kepercayaan calon pembeli & permudah pemesanan. Dari sekadar 'jualan di story' jadi punya etalase yang kerja 24 jam.
+[span] Tampil profesional
+[span] Foto produk sinematik
+[span] Order via WhatsApp
+[span] Mobile-first
+[a] Lihat website live
+[span] [ Slot kosong ]
+[h3] Usaha kamu
+[h3] berikutnya?
+[p] Punya bisnis yang pengen punya website atau landing page yang jualan kayak gini? Bisa jadi karya kami selanjutnya.
+[span] Ajukan proyek
+[a] Lihat semua portofolio
+[span] Alat siap pakai
+[span] buat bantu usahamu.
+[span] [ 04 — UMKM Tools ]
+[p] Tools praktis — ada yang gratis, ada yang sekali bayar pakai selamanya. Dibuat khusus biar UMKM lebih gampang ngatur usaha.
+[span] Berbayar
+[h3] Kalkulator HPP & Stok Bahan
+[div] Berhenti nebak harga jual
+[p] Hitung HPP (Harga Pokok Produksi) & harga jual otomatis, kelola stok bahan + tanggal kadaluarsa. Multi-usaha, jalan di HP & offline.
+[li] Multi-usaha
+[li] Stok + kadaluarsa
+[li] Hitung untung & margin
+[li] Offline di HP
+[div] Rp 49.000
+[div] sekali bayar, pakai selamanya
+[span] Lihat tool
+[div] 🏷️
+[span] Segera
+[h3] Kalkulator Margin & Diskon
+[div] Kasih diskon tanpa boncos
+[p] Cek cepat berapa margin yang aman buat kasih promo & diskon, biar nggak jualan malah rugi.
+[li] Hitung margin aman
+[li] Simulasi diskon
+[div] Gratis
+[span] Segera
+[span] Gratis
+[h3] 50 Prompt AI Terbaik
+[div] Prompt siap pakai buat kerja lebih cepat
+[p] Kumpulan prompt AI gratis untuk bantu bikin ide konten, copywriting, riset, strategi bisnis, dan pekerjaan harian lebih efisien.
+[li] Siap pakai
+[li] Untuk konten & bisnis
+[li] Cocok buat pemula
+[li] Akses gratis
+[div] Gratis
+[div] akses langsung lewat pakaiAI
+[span] Lihat tool
+[span] Segera
+[h3] Template Invoice UMKM
+[div] Tagihan rapi & profesional
+[p] Bikin invoice/nota rapi buat pelanggan dalam hitungan menit — tinggal isi, simpan, kirim.
+[li] Isi cepat
+[li] Siap kirim ke WA
+[div] Gratis
+[span] Segera
+[a] Lihat semua UMKM Tools
+[span] Lagi suntuk?
+[span] Main dulu sini.
+[span] [ ✦ — Iseng-iseng ]
+[p] Mini-game ala Flappy Bird, dikit hiburan sambil nyari tahu soal Parameter. Klik, tap, atau pencet Spasi buat ngepak.
+[span] Flappy Param
+[p] Klik / tap / Spasi buat mulai
+[div] ▶ Main
+[p] Skor
+[p] Terbaik
+[span] Builder, bukan
+[span] sekadar vendor.
+[span] [ 03 — Kenapa Parameter ]
+[h3] Punya produk sendiri
+[p] Platform Belajar Pro & Ritme dipakai user beneran — kami tahu cara bikin yang kepakai, bukan cuma teori.
+[h3] Lokal & paham UMKM
+[p] Bahasa Indonesia, harga masuk akal, paham cara bisnis lokal jalan. Bukan solusi impor yang mahal & kaku.
+[h3] Fokus hasil, bukan fitur
+[p] Kami ukur sukses dari produktivitas & pertumbuhan bisnismu — bukan dari banyaknya fitur yang nggak kepakai.
+[h3] Dampingi, bukan tinggal
+[p] Setelah launch kami nggak hilang. Kami bantu sampai sistemnya beneran jalan di tim kamu.
+[span] Dari ngobrol ke
+[span] produk yang jalan.
+[span] [ 04 — Cara Kerja ]
+[h3] Konsultasi
+[p] Ceritain masalah & target bisnismu. Gratis, tanpa komitmen.
+[h3] Rancang
+[p] Kami susun solusi & alur produk yang pas dengan kebutuhanmu.
+[h3] Bangun
+[p] Tim kami eksekusi — kamu lihat progresnya tiap langkah.
+[h3] Launch & Dampingi
+[p] Produk live, tim dilatih, dan kami dampingi setelahnya.
+[span] [ Ngobrol Yuk ]
+[span] Jangan
+[span] malu-malu.
+[p] Ceritain bisnismu, kami bantu cariin solusi digital yang paling pas — produk kami atau sistem custom. Konsultasi pertama gratis.
+[a] Konsultasi via WhatsApp
+[a] Email Kami
+[a] Follow
+[a] @parameter.id2026
+[a] Portofolio
+[a] UMKM Tools
+[a] Kenapa Kami
+[a] Instagram
+[a] WhatsApp
+[span] Parameter · PT Platform Belajar Mandiri
+[span] Studio produk digital · Dibikin di Indonesia 🇮🇩

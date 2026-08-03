@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "General Sans";
+          src: url("assets/fonts/general-sans-400.woff2") format("woff2");
+          font-weight: 400;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: "General Sans";
+          src: url("assets/fonts/general-sans-600.woff2") format("woff2");
+          font-weight: 600;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: "JetBrains Mono";
+          src: url("assets/fonts/jetbrains-mono-400.ttf") format("truetype");
+          font-weight: 400;
+          font-style: normal;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+
+        #root {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+          container-type: size;
+          color: #f6f7f9;
+          font-family: "General Sans";
+        }
+
+        .clip {
+          position: absolute;
+          inset: 0;
+          width: 1920px;
+          height: 1080px;
+          overflow: hidden;
+        }
+
+        .ground {
+          z-index: 0;
+          background-color: #0e0f13;
+          background-image:
+            linear-gradient(rgba(45, 107, 245, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(45, 107, 245, 0.1) 1px, transparent 1px);
+          background-size: 38.4px 38.4px;
+        }
+
+        .content {
+          z-index: 1;
+        }
+
+        .hairline {
+          position: absolute;
+          left: 77px;
+          width: 1766px;
+          height: 2px;
+          background: #2d6bf5;
+          transform-origin: left center;
+        }
+
+        .hairline-top {
+          top: 65px;
+        }
+
+        .hairline-bottom {
+          top: 855px;
+        }
+
+        .chrome-tag {
+          position: absolute;
+          top: 92px;
+          left: 120px;
+          height: 28px;
+          font-family: "JetBrains Mono";
+          font-size: 14px;
+          line-height: 28px;
+          letter-spacing: 0.08em;
+          color: #6fa0ff;
+          white-space: nowrap;
+        }
+
+        .chrome-page {
+          position: absolute;
+          top: 812px;
+          right: 78px;
+          width: 120px;
+          height: 24px;
+          text-align: right;
+          font-family: "JetBrains Mono";
+          font-size: 13px;
+          line-height: 24px;
+          letter-spacing: 0.06em;
+          color: #6fa0ff;
+        }
+
+        .glitch-column {
+          position: absolute;
+          top: 105px;
+          right: 68px;
+          width: 324px;
+          height: 690px;
+          opacity: 0.3;
+          overflow: hidden;
+        }
+
+        .glitch-row {
+          position: absolute;
+          right: 0;
+          height: 18px;
+          background-color: #6fa0ff;
+          background-image: repeating-linear-gradient(
+            90deg,
+            rgba(246, 247, 249, 0.55) 0 2px,
+            transparent 2px 8px
+          );
+        }
+
+        .glitch-row:nth-child(1) { top: 0; width: 152px; }
+        .glitch-row:nth-child(2) { top: 52px; width: 244px; }
+        .glitch-row:nth-child(3) { top: 118px; width: 112px; }
+        .glitch-row:nth-child(4) { top: 188px; width: 292px; }
+        .glitch-row:nth-child(5) { top: 284px; width: 176px; }
+        .glitch-row:nth-child(6) { top: 374px; width: 318px; }
+        .glitch-row:nth-child(7) { top: 486px; width: 134px; }
+        .glitch-row:nth-child(8) { top: 598px; width: 226px; }
+
+        .intro-line {
+          position: absolute;
+          top: 150px;
+          left: 120px;
+          width: 1220px;
+          min-height: 106px;
+          display: flex;
+          align-items: baseline;
+          gap: 24px;
+          white-space: nowrap;
+          font-size: 88px;
+          font-weight: 400;
+          line-height: 0.95;
+          letter-spacing: -0.008em;
+          text-transform: uppercase;
+        }
+
+        .intro-word {
+          display: inline-block;
+          min-height: 90px;
+          white-space: nowrap;
+          will-change: transform, opacity;
+        }
+
+        .intro-word:nth-child(2) {
+          color: #6fa0ff;
+        }
+
+        .fixed-copy {
+          position: absolute;
+          top: 365px;
+          left: 120px;
+          width: 720px;
+          height: 152px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          gap: 3px;
+          font-size: 58px;
+          font-weight: 400;
+          line-height: 1;
+          letter-spacing: -0.005em;
+          text-transform: uppercase;
+        }
+
+        .fixed-row {
+          display: flex;
+          align-items: baseline;
+          gap: 18px;
+          width: 720px;
+          min-height: 61px;
+        }
+
+        .fixed-word {
+          display: inline-block;
+          min-height: 61px;
+          white-space: nowrap;
+          will-change: transform, opacity;
+        }
+
+        .fixed-word.emphasis {
+          color: #6fa0ff;
+        }
+
+        .selection-box {
+          position: absolute;
+          top: 512px;
+          left: 966px;
+          width: 802px;
+          height: 218px;
+        }
+
+        .selection-edge {
+          position: absolute;
+          display: block;
+          background: #2d6bf5;
+          transform-origin: center center;
+          will-change: transform, opacity;
+        }
+
+        .selection-top,
+        .selection-bottom {
+          left: 0;
+          width: 802px;
+          height: 3px;
+          transform-origin: left center;
+        }
+
+        .selection-top { top: 0; }
+        .selection-bottom { bottom: 0; }
+
+        .selection-left,
+        .selection-right {
+          top: 0;
+          width: 3px;
+          height: 218px;
+          transform-origin: center top;
+        }
+
+        .selection-left { left: 0; }
+        .selection-right { right: 0; }
+
+        .selection-handle {
+          position: absolute;
+          width: 13px;
+          height: 13px;
+          background: #0e0f13;
+          border: 3px solid #2d6bf5;
+        }
+
+        .handle-tl { top: -5px; left: -5px; }
+        .handle-tr { top: -5px; right: -5px; }
+        .handle-bl { bottom: -5px; left: -5px; }
+        .handle-br { bottom: -5px; right: -5px; }
+
+        .selection-label {
+          position: absolute;
+          top: -34px;
+          left: 0;
+          width: 260px;
+          height: 24px;
+          font-family: "JetBrains Mono";
+          font-size: 13px;
+          line-height: 24px;
+          letter-spacing: 0.06em;
+          color: #6fa0ff;
+          white-space: nowrap;
+        }
+
+        .token {
+          position: absolute;
+          top: 541px;
+          left: 1000px;
+          width: 736px;
+          height: 156px;
+          display: block;
+          overflow: visible;
+          white-space: nowrap;
+          font-size: 158px;
+          font-weight: 400;
+          line-height: 0.9;
+          letter-spacing: -0.015em;
+          color: #f6f7f9;
+          filter: url(#f01-token-streak);
+          will-change: transform, opacity, filter;
+        }
+
+        .axis-label {
+          position: absolute;
+          top: 758px;
+          left: 969px;
+          width: 560px;
+          height: 24px;
+          font-family: "JetBrains Mono";
+          font-size: 13px;
+          line-height: 24px;
+          letter-spacing: 0.06em;
+          color: #6fa0ff;
+          white-space: nowrap;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="01-bukan-sekadar-canggih"
+        data-start="0"
+        data-duration="4.5"
+        data-width="1920"
+        data-height="1080"
+      >
+        <div id="f01-ground" class="clip ground" data-start="0" data-duration="4.5" data-track-index="0">
+          <div class="hairline hairline-top"></div>
+          <div class="hairline hairline-bottom"></div>
+          <div id="f01-glitch" class="glitch-column" aria-hidden="true">
+            <i class="glitch-row"></i>
+            <i class="glitch-row"></i>
+            <i class="glitch-row"></i>
+            <i class="glitch-row"></i>
+            <i class="glitch-row"></i>
+            <i class="glitch-row"></i>
+            <i class="glitch-row"></i>
+            <i class="glitch-row"></i>
+          </div>
+        </div>
+
+        <div id="f01-content" class="clip content" data-start="0" data-duration="4.5" data-track-index="1">
+          <div id="f01-chrome-tag" class="chrome-tag">[ 01 — PARAMETER ]</div>
+          <div class="chrome-page">FRAME / 01</div>
+
+          <div class="intro-line" aria-label="Bisnismu nggak butuh">
+            <span id="f01-word-bisnismu" class="intro-word">Bisnismu</span>
+            <span id="f01-word-nggak" class="intro-word">nggak</span>
+            <span id="f01-word-butuh" class="intro-word">butuh</span>
+          </div>
+
+          <div class="fixed-copy" aria-label="sistem yang cuma terlihat">
+            <div class="fixed-row">
+              <span id="f01-word-sistem" class="fixed-word">sistem</span>
+              <span id="f01-word-yang" class="fixed-word emphasis">yang</span>
+            </div>
+            <div class="fixed-row">
+              <span id="f01-word-cuma" class="fixed-word emphasis">cuma</span>
+              <span id="f01-word-terlihat" class="fixed-word">terlihat</span>
+            </div>
+          </div>
+
+          <div id="f01-selection-box" class="selection-box" aria-hidden="true">
+            <i class="selection-edge selection-top"></i>
+            <i class="selection-edge selection-bottom"></i>
+            <i class="selection-edge selection-left"></i>
+            <i class="selection-edge selection-right"></i>
+            <i class="selection-handle handle-tl"></i>
+            <i class="selection-handle handle-tr"></i>
+            <i class="selection-handle handle-bl"></i>
+            <i class="selection-handle handle-br"></i>
+            <div class="selection-label">TOKEN / OUTPUT</div>
+          </div>
+
+          <svg width="0" height="0" aria-hidden="true" style="position: absolute">
+            <defs>
+              <filter id="f01-token-streak" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur
+                  id="f01-token-streak-blur"
+                  in="SourceGraphic"
+                  stdDeviation="0 0"
+                />
+              </filter>
+            </defs>
+          </svg>
+
+          <div id="f01-token" class="token" aria-live="polite"></div>
+          <div class="axis-label">FIXED LINE / VARIABLE TOKEN</div>
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+      <script>
+        (function () {
+          window.__timelines = window.__timelines || {};
+          const tl = gsap.timeline({ paused: true });
+
+          const introWords = [
+            { selector: "#f01-word-bisnismu", text: "Bisnismu" },
+            { selector: "#f01-word-nggak", text: "nggak" },
+            { selector: "#f01-word-butuh", text: "butuh" },
+          ];
+          let introCursor = 0.08;
+          const introSequence = introWords.map((item) => {
+            const start = introCursor;
+            introCursor += 0.055 + item.text.length * 0.008;
+            return { ...item, start };
+          });
+
+          introSequence.forEach((item, index) => {
+            tl.fromTo(
+              item.selector,
+              { y: 54 + index * 8, opacity: 0 },
+              { y: 0, opacity: 1, duration: 0.42, ease: "power4.out" },
+              item.start,
+            );
+          });
+
+          tl.fromTo(
+            ".hairline",
+            { scaleX: 0, opacity: 0.35 },
+            { scaleX: 1, opacity: 1, duration: 0.72, ease: "expo.out" },
+            0,
+          );
+          tl.fromTo(
+            "#f01-chrome-tag",
+            { x: -28, opacity: 0 },
+            { x: 0, opacity: 1, duration: 0.38, ease: "expo.out" },
+            0.18,
+          );
+          tl.fromTo(
+            "#f01-glitch",
+            { x: 74, opacity: 0 },
+            { x: 0, opacity: 0.3, duration: 0.58, ease: "power3.out" },
+            0.28,
+          );
+
+          const BEATS = [1.02, 1.2, 1.38, 1.56, 1.86];
+          tl.fromTo(
+            "#f01-word-sistem",
+            { scale: 1.18, opacity: 0 },
+            { scale: 1, opacity: 1, duration: 0.42, ease: "power4.out" },
+            BEATS[0],
+          );
+          tl.fromTo(
+            "#f01-word-yang",
+            { x: -110, opacity: 0 },
+            { x: 0, opacity: 1, duration: 0.38, ease: "expo.out" },
+            BEATS[1],
+          );
+          tl.fromTo(
+            "#f01-word-cuma",
+            { y: 62, rotation: 3, opacity: 0 },
+            { y: 0, rotation: 0, opacity: 1, duration: 0.44, ease: "circ.out" },
+            BEATS[2],
+          );
+          tl.fromTo(
+            "#f01-word-terlihat",
+            { x: 120, opacity: 0 },
+            { x: 0, opacity: 1, duration: 0.4, ease: "expo.out" },
+            BEATS[3],
+          );
+
+          const tokenStates = [
+            { t: 0, text: "" },
+            { t: BEATS[4], text: "CANGGIH" },
+            { t: 2.7, text: "BEKERJA" },
+          ];
+          const tokenEl = document.getElementById("f01-token");
+          const tokenDriver = { t: 0 };
+          let lastToken = null;
+          const tokenAt = (time) => {
+            for (let i = tokenStates.length - 1; i >= 0; i -= 1) {
+              if (time >= tokenStates[i].t) return tokenStates[i].text;
+            }
+            return "";
+          };
+
+          tl.to(
+            tokenDriver,
+            {
+              t: 4,
+              duration: 4,
+              ease: "none",
+              onUpdate: () => {
+                const nextToken = tokenAt(tokenDriver.t);
+                if (nextToken !== lastToken) {
+                  tokenEl.textContent = nextToken;
+                  lastToken = nextToken;
+                }
+              },
+            },
+            0,
+          );
+
+          const blurNode = document.getElementById("f01-token-streak-blur");
+          const blurProxy = { v: 0 };
+          const writeBlur = () => {
+            blurNode.setAttribute("stdDeviation", `${blurProxy.v} 0`);
+          };
+          writeBlur();
+
+          const boxStart = BEATS[4] - 0.1;
+          tl.fromTo(
+            ".selection-top, .selection-bottom",
+            { scaleX: 0, opacity: 0.4 },
+            { scaleX: 1, opacity: 1, duration: 0.34, ease: "power3.out" },
+            boxStart,
+          );
+          tl.fromTo(
+            ".selection-left, .selection-right",
+            { scaleY: 0, opacity: 0.4 },
+            { scaleY: 1, opacity: 1, duration: 0.34, ease: "power3.out" },
+            boxStart + 0.08,
+          );
+          tl.fromTo(
+            ".selection-handle, .selection-label, .axis-label",
+            { scale: 0.72, opacity: 0 },
+            { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.7)" },
+            boxStart + 0.16,
+          );
+          tl.fromTo(
+            "#f01-token",
+            { scale: 1.18, opacity: 0 },
+            { scale: 1, opacity: 1, duration: 0.42, ease: "power4.out" },
+            BEATS[4],
+          );
+          tl.fromTo(
+            blurProxy,
+            { v: 10 },
+            { v: 0, duration: 0.42, ease: "power4.out", onUpdate: writeBlur },
+            BEATS[4],
+          );
+
+          tl.fromTo(
+            "#f01-token",
+            { x: 150, scale: 1, opacity: 0.2 },
+            { x: 0, scale: 1, opacity: 1, duration: 0.28, ease: "power4.out" },
+            2.7,
+          );
+          tl.fromTo(
+            blurProxy,
+            { v: 10 },
+            { v: 0, duration: 0.28, ease: "power4.out", onUpdate: writeBlur },
+            2.7,
+          );
+
+          window.__timelines["01-bukan-sekadar-canggih"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

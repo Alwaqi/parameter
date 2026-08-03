@@ -1,0 +1,635 @@
+<template>
+  <div
+    id="root"
+    data-composition-id="03-builder-dengan-bukti"
+    data-duration="6.45"
+    data-width="1920"
+    data-height="1080"
+  >
+    <style>
+      @font-face {
+        font-family: "General Sans";
+        src: url("assets/fonts/general-sans-400.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "General Sans";
+        src: url("assets/fonts/general-sans-500.woff2") format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "General Sans";
+        src: url("assets/fonts/general-sans-600.woff2") format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "JetBrains Mono";
+        src: url("assets/fonts/jetbrains-mono-400.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        container-type: size;
+        color: #f6f7f9;
+        font-family: "General Sans";
+      }
+
+      #root * {
+        box-sizing: border-box;
+      }
+
+      .f03-ground,
+      .f03-content {
+        position: absolute;
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+      }
+
+      .f03-ground {
+        background-color: #0e0f13;
+        background-image:
+          linear-gradient(rgba(45, 107, 245, 0.1) 1.5px, transparent 1.5px),
+          linear-gradient(90deg, rgba(45, 107, 245, 0.1) 1.5px, transparent 1.5px);
+        background-size: 38px 38px;
+      }
+
+      .f03-hairline {
+        position: absolute;
+        left: 77px;
+        width: 1766px;
+        height: 2px;
+        background: #f6f7f9;
+        opacity: 0.92;
+      }
+
+      .f03-hairline-top {
+        top: 58px;
+      }
+
+      .f03-hairline-bottom {
+        top: 862px;
+      }
+
+      .f03-page-meta {
+        position: absolute;
+        top: 827px;
+        font-family: "JetBrains Mono";
+        font-size: 16px;
+        line-height: 1;
+        letter-spacing: 0.08em;
+        color: #f6f7f9;
+      }
+
+      .f03-page-meta-left {
+        left: 78px;
+      }
+
+      .f03-page-meta-right {
+        right: 78px;
+      }
+
+      .f03-camera {
+        position: absolute;
+        left: 120px;
+        top: 66px;
+        width: 1680px;
+        height: 760px;
+        will-change: transform;
+      }
+
+      .f03-topbar {
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 42px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        border-bottom: 2px solid #f6f7f9;
+        font-family: "JetBrains Mono";
+        font-size: 18px;
+        line-height: 1;
+        letter-spacing: 0.07em;
+        will-change: transform, opacity;
+      }
+
+      .f03-topbar-code {
+        color: #6fa0ff;
+      }
+
+      .f03-heading {
+        position: absolute;
+        left: 0;
+        top: 52px;
+        width: 100%;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        font-size: 55px;
+        line-height: 0.95;
+        font-weight: 400;
+        letter-spacing: -0.008em;
+        will-change: transform, opacity;
+      }
+
+      .f03-heading-index {
+        font-family: "JetBrains Mono";
+        font-size: 17px;
+        letter-spacing: 0.08em;
+        color: #6fa0ff;
+      }
+
+      .f03-grid {
+        position: absolute;
+        left: 0;
+        top: 142px;
+        width: 1680px;
+        height: 618px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 300px;
+        gap: 18px;
+      }
+
+      .f03-card {
+        position: relative;
+        width: 831px;
+        height: 300px;
+        overflow: hidden;
+        border: 2px solid #2d6bf5;
+        background: rgba(14, 15, 19, 0.94);
+        will-change: transform, opacity;
+      }
+
+      .f03-card-number {
+        position: absolute;
+        left: 22px;
+        top: 20px;
+        z-index: 7;
+        font-family: "JetBrains Mono";
+        font-size: 17px;
+        line-height: 1;
+        letter-spacing: 0.07em;
+        color: #6fa0ff;
+      }
+
+      .f03-card-title {
+        position: absolute;
+        left: 22px;
+        top: 48px;
+        z-index: 7;
+        max-width: 410px;
+        font-size: 28px;
+        line-height: 1;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+      }
+
+      .f03-card-rule {
+        position: absolute;
+        left: 22px;
+        right: 22px;
+        top: 91px;
+        z-index: 7;
+        height: 1px;
+        background: rgba(45, 107, 245, 0.55);
+      }
+
+      .f03-card-image {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        object-fit: cover;
+        filter: grayscale(1) contrast(1.1) brightness(0.9);
+      }
+
+      .f03-card-lms .f03-card-image {
+        right: 6px;
+        bottom: -94px;
+        width: 430px;
+        height: 430px;
+        object-fit: contain;
+        filter: grayscale(1) contrast(1.18) brightness(1.05);
+        will-change: transform, opacity;
+      }
+
+      .f03-lms-stack {
+        position: absolute;
+        left: 22px;
+        bottom: 38px;
+        z-index: 7;
+        width: 300px;
+      }
+
+      .f03-lms-kicker {
+        font-family: "JetBrains Mono";
+        font-size: 15px;
+        line-height: 1;
+        letter-spacing: 0.08em;
+        color: #6fa0ff;
+      }
+
+      .f03-product-band {
+        margin-top: 10px;
+        font-size: 25px;
+        line-height: 1.05;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        will-change: transform, opacity;
+      }
+
+      .f03-live {
+        position: absolute;
+        left: 273px;
+        bottom: 38px;
+        z-index: 8;
+        border: 1px solid #2d6bf5;
+        padding: 7px 9px 6px;
+        background: #0e0f13;
+        font-family: "JetBrains Mono";
+        font-size: 13px;
+        line-height: 1;
+        letter-spacing: 0.08em;
+        color: #f6f7f9;
+        will-change: transform, opacity;
+      }
+
+      .f03-live::before {
+        content: "+";
+        margin-right: 6px;
+        color: #6fa0ff;
+      }
+
+      .f03-card-web .f03-card-image,
+      .f03-card-hpp .f03-card-image {
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.46;
+      }
+
+      .f03-card-web .f03-card-image {
+        object-position: 50% 45%;
+      }
+
+      .f03-card-hpp .f03-card-image {
+        object-position: 50% 50%;
+      }
+
+      .f03-image-scrim {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        background: rgba(14, 15, 19, 0.72);
+      }
+
+      .f03-seam-sheet {
+        position: absolute;
+        inset: 0;
+        z-index: 6;
+        border-left: 26px solid #f6f7f9;
+        background: #6fa0ff;
+        will-change: transform, opacity;
+      }
+
+      .f03-seam-sheet span {
+        position: absolute;
+        left: 54px;
+        top: 118px;
+        font-family: "JetBrains Mono";
+        font-size: 18px;
+        letter-spacing: 0.08em;
+        color: #0e0f13;
+      }
+
+      .f03-card-ritme {
+        background: #0e0f13;
+      }
+
+      .f03-ritme-visual {
+        position: absolute;
+        right: 0;
+        bottom: -26px;
+        z-index: 2;
+        width: 470px;
+        height: 260px;
+        overflow: hidden;
+      }
+
+      .f03-ritme-column {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        will-change: transform, opacity;
+      }
+
+      .f03-ritme-column-left {
+        left: 0;
+      }
+
+      .f03-ritme-column-right {
+        right: 0;
+      }
+
+      .f03-ritme-column img,
+      .f03-ritme-bg {
+        position: absolute;
+        top: -106px;
+        width: 470px;
+        height: 470px;
+        object-fit: contain;
+        filter: grayscale(1) contrast(1.14) brightness(1.05);
+      }
+
+      .f03-ritme-bg {
+        right: 0;
+        background: url("assets/ritme-cluster.png") center / contain no-repeat;
+      }
+
+      .f03-ritme-column-left img {
+        left: 0;
+      }
+
+      .f03-ritme-column-right img {
+        right: 0;
+      }
+
+      .f03-ritme-meta {
+        position: absolute;
+        left: 22px;
+        bottom: 43px;
+        z-index: 7;
+        width: 260px;
+        font-family: "JetBrains Mono";
+        font-size: 15px;
+        line-height: 1.45;
+        letter-spacing: 0.05em;
+        color: #6fa0ff;
+        will-change: transform, opacity;
+      }
+
+      .f03-proof {
+        position: absolute;
+        left: 22px;
+        bottom: 16px;
+        z-index: 9;
+        display: inline-block;
+        padding-top: 8px;
+        border-top: 1px solid #f6f7f9;
+        font-family: "JetBrains Mono";
+        font-size: 13px;
+        line-height: 1;
+        letter-spacing: 0.07em;
+        color: #f6f7f9;
+        background: #0e0f13;
+        padding-left: 6px;
+        padding-right: 6px;
+        will-change: transform, opacity;
+      }
+
+      .f03-card-lms .f03-proof {
+        left: 510px;
+      }
+
+      .f03-proof-mark {
+        color: #6fa0ff;
+      }
+    </style>
+
+    <div
+      id="f03-ground"
+      class="clip f03-ground"
+      data-start="0"
+      data-duration="6.45"
+      data-track-index="0"
+      aria-hidden="true"
+    ></div>
+
+    <div
+      id="f03-content"
+      class="clip f03-content"
+      data-start="0"
+      data-duration="6.45"
+      data-track-index="1"
+    >
+      <div class="f03-hairline f03-hairline-top"></div>
+      <div class="f03-hairline f03-hairline-bottom"></div>
+
+      <div class="f03-camera">
+        <div class="f03-topbar">
+          <span>BUILT + RUNNING</span>
+          <span class="f03-topbar-code">PARAMETER / 04 PROOFS</span>
+        </div>
+
+        <div class="f03-heading">
+          <span>PRODUK YANG KAMI JALANIN</span>
+          <span class="f03-heading-index">ECOSYSTEM / COMPLETE</span>
+        </div>
+
+        <div class="f03-grid" data-layout-allow-overflow>
+          <article class="f03-card f03-card-lms" data-layout-allow-overflow>
+            <div class="f03-card-number">01</div>
+            <div class="f03-card-title">APLIKASI + DASHBOARD</div>
+            <div class="f03-card-rule"></div>
+            <img
+              class="f03-card-image f03-lms-image"
+              src="assets/lms-cluster.png"
+              alt="Learning management modules"
+            />
+            <div class="f03-lms-stack">
+              <div class="f03-lms-kicker">OWNED PRODUCT</div>
+              <div class="f03-product-band">PLATFORM BELAJAR PRO</div>
+            </div>
+            <div class="f03-live">LIVE</div>
+            <div class="f03-proof"><span class="f03-proof-mark">PROOF /</span> CUSTOM SYSTEMS</div>
+          </article>
+
+          <article class="f03-card f03-card-web" data-layout-allow-overflow>
+            <img
+              class="f03-card-image"
+              src="assets/alana-hero.webp"
+              alt="Local bakery website case study"
+            />
+            <div class="f03-image-scrim"></div>
+            <div class="f03-card-number">02</div>
+            <div class="f03-card-title">WEBSITE</div>
+            <div class="f03-card-rule"></div>
+            <div class="f03-seam-sheet f03-seam-02"><span>02 / WEBSITE</span></div>
+            <div class="f03-proof"><span class="f03-proof-mark">PROOF /</span> LOCAL BUSINESS</div>
+          </article>
+
+          <article class="f03-card f03-card-hpp" data-layout-allow-overflow>
+            <img
+              class="f03-card-image"
+              src="assets/kalkulator-hpp-thumbnail.png"
+              alt="UMKM cost calculator tool"
+            />
+            <div class="f03-image-scrim"></div>
+            <div class="f03-card-number">03</div>
+            <div class="f03-card-title">UMKM TOOLS</div>
+            <div class="f03-card-rule"></div>
+            <div class="f03-seam-sheet f03-seam-03"><span>03 / UMKM TOOLS</span></div>
+            <div class="f03-proof"><span class="f03-proof-mark">PROOF /</span> HPP CALCULATOR</div>
+          </article>
+
+          <article class="f03-card f03-card-ritme" data-layout-allow-overflow>
+            <div class="f03-card-number">04</div>
+            <div class="f03-card-title">RITME</div>
+            <div class="f03-card-rule"></div>
+            <div class="f03-ritme-visual" data-layout-allow-overflow>
+              <div class="f03-ritme-column f03-ritme-column-left" data-layout-allow-overflow>
+                <img src="assets/ritme-cluster.png" alt="" />
+              </div>
+              <div class="f03-ritme-column f03-ritme-column-right" data-layout-allow-overflow>
+                <div class="f03-ritme-bg" aria-hidden="true"></div>
+              </div>
+            </div>
+            <div class="f03-ritme-meta">STUDIO SCHEDULE<br />MEMBER SYSTEM</div>
+            <div class="f03-proof"><span class="f03-proof-mark">PROOF /</span> OWNED SAAS</div>
+          </article>
+        </div>
+      </div>
+
+      <div class="f03-page-meta f03-page-meta-left">PRODUCT SYSTEMS / EVIDENCE MOSAIC</div>
+      <div class="f03-page-meta f03-page-meta-right">03 / 04</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+
+      const frame03Root = document.querySelector('[data-composition-id="03-builder-dengan-bukti"]');
+      const frame03 = (selector) => frame03Root.querySelector(selector);
+      const frame03All = (selector) => Array.from(frame03Root.querySelectorAll(selector));
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo(
+        frame03('.f03-camera'),
+        { scale: 1.035, transformOrigin: '50% 48%' },
+        { scale: 1.035, transformOrigin: '50% 48%', duration: 0.01, ease: 'none' },
+        0
+      );
+
+      tl.fromTo(
+        frame03('.f03-topbar'),
+        { y: -34, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.46, ease: 'power3.out' },
+        0.03
+      );
+
+      tl.fromTo(
+        frame03('.f03-card-lms'),
+        { x: -34, y: 18, scale: 0.96, opacity: 0 },
+        { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.58, ease: 'power3.out' },
+        0.04
+      );
+
+      tl.fromTo(
+        frame03('.f03-lms-image'),
+        { x: -86, y: -48, scale: 0.62, opacity: 0 },
+        { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.74, ease: 'power3.out' },
+        0.14
+      );
+
+      tl.fromTo(
+        frame03('.f03-card-web'),
+        { x: 230, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.34, ease: 'power4.out' },
+        1.3
+      );
+      tl.fromTo(
+        frame03('.f03-seam-02'),
+        { x: 0, opacity: 1 },
+        { x: -230, opacity: 0, duration: 0.34, ease: 'power4.in' },
+        1.3
+      );
+
+      tl.fromTo(
+        frame03('.f03-card-hpp'),
+        { x: 230, opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.34, ease: 'power4.out' },
+        2.02
+      );
+      tl.fromTo(
+        frame03('.f03-seam-03'),
+        { x: 0, opacity: 1 },
+        { x: -230, opacity: 0, duration: 0.34, ease: 'power4.in' },
+        2.02
+      );
+
+      tl.fromTo(
+        frame03('.f03-product-band'),
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.45, ease: 'power3.out' },
+        2.72
+      );
+      tl.fromTo(
+        frame03('.f03-live'),
+        { y: 16, scale: 0.82, opacity: 0 },
+        { y: 0, scale: 1, opacity: 1, duration: 0.38, ease: 'back.out(1.45)' },
+        3.02
+      );
+
+      tl.fromTo(
+        frame03('.f03-card-ritme'),
+        { y: 188, opacity: 0.25 },
+        { y: 0, opacity: 1, duration: 0.56, ease: 'power4.out' },
+        3.4
+      );
+
+      frame03All('.f03-ritme-column').forEach((column, index) => {
+        tl.fromTo(
+          column,
+          { y: 150, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.58, ease: 'power4.out' },
+          3.48 + index * 0.08
+        );
+      });
+
+      tl.fromTo(
+        frame03('.f03-ritme-meta'),
+        { y: 72, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.48, ease: 'power3.out' },
+        3.72
+      );
+
+      tl.fromTo(
+        frame03('.f03-camera'),
+        { scale: 1.035, transformOrigin: '50% 48%' },
+        { scale: 0.92, transformOrigin: '50% 48%', duration: 0.65, ease: 'power3.out' },
+        4.5
+      );
+
+      tl.fromTo(
+        frame03('.f03-heading'),
+        { y: 28, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.52, ease: 'power3.out' },
+        4.53
+      );
+
+      frame03All('.f03-proof').forEach((label, index) => {
+        tl.fromTo(
+          label,
+          { y: 16, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.38, ease: 'power3.out' },
+          4.7 + index * 0.08
+        );
+      });
+
+      window.__timelines['03-builder-dengan-bukti'] = tl;
+    </script>
+  </div>
+</template>
