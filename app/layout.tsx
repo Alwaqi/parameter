@@ -21,6 +21,15 @@ export const metadata: Metadata = {
     locale: "id_ID",
     images: ["/parameter-square.jpg"],
   },
+  // Bukti kepemilikan parameter.cloud untuk Meta Business Manager. Nilainya
+  // publik — ini penanda kepemilikan, bukan rahasia, jadi aman di-commit.
+  //
+  // Ditaruh lewat metadata API dan bukan sebagai tag mentah di <head> karena
+  // Meta menolak tag yang disisipkan JavaScript di browser; Next merender ini
+  // di server, sehingga sudah ada di HTML saat crawler Meta membacanya.
+  other: {
+    "facebook-domain-verification": "tvlmlm2380mqpqv9tu9ia690doehs1",
+  },
   icons: {
     icon: [
       { url: "/parameter-favicon-white-20260617.png", type: "image/png", sizes: "512x512" },
